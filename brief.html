@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Start your Japan market entry brief. Tell us about your company and we'll respond with a proposal within 24 hours.">
+<title>Start Your Brief — Blueshift Inc.</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:'Inter',sans-serif;color:#1a2236;background:#f7f9fc;line-height:1.6;-webkit-font-smoothing:antialiased}
+.nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(13,27,62,.97);backdrop-filter:blur(10px);padding:14px 40px;display:flex;align-items:center;justify-content:space-between}
+.logo{font-size:17px;font-weight:800;color:#fff;letter-spacing:-.03em;text-decoration:none}
+.logo span{color:#16B8B2}
+.nav-right{display:flex;align-items:center;gap:24px}
+.nav-about,.nav-back{font-size:13px;font-weight:500;color:rgba(255,255,255,.65);text-decoration:none;transition:color .15s}
+.nav-about:hover,.nav-back:hover{color:#fff}
+.hero{background:linear-gradient(150deg,#0d1b3e 0%,#13295a 60%,#0e3a3a 100%);color:#fff;padding:120px 40px 60px;text-align:center}
+.hero-label{display:inline-block;background:rgba(22,184,178,.15);border:1px solid rgba(22,184,178,.35);color:#7EE8E5;font-size:11px;font-weight:700;letter-spacing:.12em;padding:5px 18px;border-radius:20px;margin-bottom:20px;text-transform:uppercase}
+.hero h1{font-size:clamp(24px,4vw,40px);font-weight:900;line-height:1.15;letter-spacing:-.03em;margin-bottom:12px}
+.hero h1 em{font-style:normal;color:#16B8B2}
+.hero-sub{font-size:15px;color:rgba(255,255,255,.6);max-width:420px;margin:0 auto}
+.form-outer{max-width:680px;margin:0 auto;padding:48px 24px 80px}
+.form-card{background:#fff;border-radius:16px;padding:40px;box-shadow:0 4px 32px rgba(13,27,62,.08);border:1px solid #e8eff7}
+.form-intro{margin-bottom:32px;padding-bottom:28px;border-bottom:1px solid #f0f4f8}
+.form-intro p{font-size:14px;color:#5a6a82;line-height:1.7}
+.form-intro strong{color:#0d1b3e}
+.field{margin-bottom:24px}
+.field label{display:block;font-size:13px;font-weight:600;color:#0d1b3e;margin-bottom:7px}
+.field label .req{color:#16B8B2;margin-left:2px}
+.field input,.field textarea,.field select{width:100%;padding:11px 14px;border:1.5px solid #dde5f0;border-radius:8px;font-size:14px;font-family:'Inter',sans-serif;color:#1a2236;background:#fff;transition:border-color .15s,box-shadow .15s;outline:none;appearance:none;-webkit-appearance:none}
+.field input:focus,.field textarea:focus,.field select:focus{border-color:#16B8B2;box-shadow:0 0 0 3px rgba(22,184,178,.12)}
+.field textarea{resize:vertical;min-height:100px}
+.field .hint{font-size:12px;color:#8a9ab2;margin-top:5px}
+.field-row{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.plan-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:4px}
+.plan-option{position:relative}
+.plan-option input[type="radio"]{position:absolute;opacity:0;width:0;height:0}
+.plan-label{display:block;padding:14px 16px;border:1.5px solid #dde5f0;border-radius:10px;cursor:pointer;transition:border-color .15s,background .15s}
+.plan-label:hover{border-color:#16B8B2;background:#f4fbfb}
+.plan-option input:checked + .plan-label{border-color:#16B8B2;background:#f0fafa;box-shadow:0 0 0 3px rgba(22,184,178,.1)}
+.plan-name{font-size:13px;font-weight:700;color:#0d1b3e}
+.plan-price{font-size:12px;color:#16B8B2;font-weight:600;margin-top:2px}
+.plan-desc{font-size:11px;color:#8a9ab2;margin-top:3px}
+.plan-badge{display:inline-block;font-size:9px;font-weight:700;background:#16B8B2;color:#fff;padding:2px 6px;border-radius:4px;margin-left:6px;text-transform:uppercase}
+.divider{border:none;border-top:1px solid #f0f4f8;margin:28px 0}
+.submit-btn{width:100%;padding:15px;background:linear-gradient(90deg,#0d1b3e,#16B8B2);color:#fff;border:none;border-radius:10px;font-size:16px;font-weight:700;font-family:'Inter',sans-serif;cursor:pointer;transition:opacity .15s}
+.submit-btn:hover{opacity:.9}
+.submit-note{text-align:center;font-size:12px;color:#8a9ab2;margin-top:12px}
+.submit-note a{color:#16B8B2;text-decoration:none}
+.trust-bar{max-width:680px;margin:0 auto 60px;padding:0 24px;display:flex;gap:24px;justify-content:center;flex-wrap:wrap}
+.trust-item{font-size:13px;color:#5a6a82;display:flex;align-items:center;gap:7px}
+.trust-item::before{content:'✓';color:#16B8B2;font-weight:700}
+@media(max-width:600px){
+  .nav{padding:12px 20px}
+  .hero{padding:100px 24px 48px}
+  .form-outer{padding:32px 16px 60px}
+  .form-card{padding:28px 20px}
+  .field-row{grid-template-columns:1fr}
+}
+</style>
+</head>
+<body>
+<nav class="nav">
+  <a href="sample.html" class="logo">blue<span>shift</span></a>
+  <div class="nav-right">
+    <a href="about.html" class="nav-about">About</a>
+    <a href="sample.html" class="nav-back">← Services</a>
+  </div>
+</nav>
+<section class="hero">
+  <div class="hero-label">Start Your Brief</div>
+  <h1>Tell us about your <em>Japan play.</em></h1>
+  <p class="hero-sub">10 minutes now. A proposal in your inbox within 24 hours.</p>
+</section>
+<div class="form-outer">
+  <form class="form-card" action="https://formspree.io/ceo@blueshift-inc.jp" method="POST">
+    <div class="form-intro">
+      <p>The more specific you can be, the faster we can assess fit and scope. <strong>No commitment required</strong> — this brief leads to a proposal, not a contract.</p>
+    </div>
+    <div class="field-row">
+      <div class="field">
+        <label>Your name <span class="req">*</span></label>
+        <input type="text" name="name" placeholder="Jane Smith" required>
+      </div>
+      <div class="field">
+        <label>Company name <span class="req">*</span></label>
+        <input type="text" name="company" placeholder="Acme Corp" required>
+      </div>
+    </div>
+    <div class="field">
+      <label>Company website</label>
+      <input type="url" name="website" placeholder="https://acmecorp.com">
+    </div>
+    <div class="field">
+      <label>What product or service are you considering for Japan? <span class="req">*</span></label>
+      <textarea name="product" placeholder="e.g. We offer a B2B SaaS platform for HR compliance. We're considering Japan but aren't sure which customer segment to target first." required></textarea>
+    </div>
+    <div class="field">
+      <label>Who is your target customer in Japan? <span class="req">*</span></label>
+      <select name="target_type" required>
+        <option value="" disabled selected>Select customer type</option>
+        <option>B2B — Large Enterprise (1,000+ employees)</option>
+        <option>B2B — Mid-market (100–1,000 employees)</option>
+        <option>B2B — SMB (under 100 employees)</option>
+        <option>B2C — Consumer</option>
+        <option>B2G — Government / Public sector</option>
+        <option>Not sure yet</option>
+      </select>
+    </div>
+    <div class="field">
+      <label>What are the 2–3 key questions you need answered? <span class="req">*</span></label>
+      <textarea name="questions" placeholder="e.g. 1) Is there demand for our product among Japanese mid-market manufacturers? 2) Who are our main competitors? 3) Which sales channels should we prioritize?" required></textarea>
+      <div class="hint">Specific questions lead to better research.</div>
+    </div>
+    <hr class="divider">
+    <div class="field">
+      <label>What's your timeline for the Japan entry decision?</label>
+      <select name="timeline">
+        <option value="" disabled selected>Select timeline</option>
+        <option>Immediate — decision within 3 months</option>
+        <option>Near-term — 3 to 6 months</option>
+        <option>Planning ahead — 6 to 12 months</option>
+        <option>Early exploration, no fixed timeline</option>
+      </select>
+    </div>
+    <div class="field">
+      <label>Which report type interests you most?</label>
+      <div class="plan-grid">
+        <div class="plan-option">
+          <input type="radio" name="plan" id="plan-starter" value="Starter ¥300K">
+          <label class="plan-label" for="plan-starter">
+            <div class="plan-name">Starter</div>
+            <div class="plan-price">¥300K</div>
+            <div class="plan-desc">Market map + top segments</div>
+          </label>
+        </div>
+        <div class="plan-option">
+          <input type="radio" name="plan" id="plan-standard" value="Standard ¥700K">
+          <label class="plan-label" for="plan-standard">
+            <div class="plan-name">Standard <span class="plan-badge">Popular</span></div>
+            <div class="plan-price">¥700K</div>
+            <div class="plan-desc">Full GTM + partner map</div>
+          </label>
+        </div>
+        <div class="plan-option">
+          <input type="radio" name="plan" id="plan-premium" value="Premium ¥1.5M">
+          <label class="plan-label" for="plan-premium">
+            <div class="plan-name">Premium</div>
+            <div class="plan-price">¥1.5M</div>
+            <div class="plan-desc">Deep-dive + introductions</div>
+          </label>
+        </div>
+        <div class="plan-option">
+          <input type="radio" name="plan" id="plan-unsure" value="Not sure yet" checked>
+          <label class="plan-label" for="plan-unsure">
+            <div class="plan-name">Not sure yet</div>
+            <div class="plan-price">—</div>
+            <div class="plan-desc">We'll recommend</div>
+          </label>
+        </div>
+      </div>
+    </div>
+    <hr class="divider">
+    <div class="field">
+      <label>Your work email <span class="req">*</span></label>
+      <input type="email" name="email" placeholder="jane@acmecorp.com" required>
+      <div class="hint">We'll send the proposal here. No spam, ever.</div>
+    </div>
+    <div class="field">
+      <label>How did you find Blueshift?</label>
+      <select name="source">
+        <option value="" disabled selected>Select one</option>
+        <option>LinkedIn</option>
+        <option>Google search</option>
+        <option>Referral from someone I know</option>
+        <option>Other</option>
+      </select>
+    </div>
+    <input type="hidden" name="_subject" value="New Brief — Blueshift Inc.">
+    <input type="hidden" name="_next" value="https://blueshift-inc.jp/sample.html">
+    <button type="submit" class="submit-btn">Submit Brief →</button>
+    <p class="submit-note">Or email directly: <a href="mailto:ceo@blueshift-inc.jp">ceo@blueshift-inc.jp</a></p>
+  </form>
+  <div class="trust-bar">
+    <div class="trust-item">Response within 24 hours</div>
+    <div class="trust-item">No commitment required</div>
+    <div class="trust-item">20 years Japan experience</div>
+  </div>
+</div>
+</body>
+</html>
