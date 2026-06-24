@@ -1,0 +1,674 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Why Japan. Why Now. Why Us. â Blueshift Inc.</title>
+<meta name="description" content="The structural case for Japan market entry â and why 20 years inside a sogo shosha makes Blueshift different.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.min.js"></script>
+<style>
+:root {
+  --navy:#060C1A;
+  --teal:#16B8B2;
+  --ink:#F4F6F8;
+  --muted:#8A96AA;
+  --surface:#0D1829;
+  --panel:#0F1E35;
+  --bg:#080E1C;
+  --line:rgba(255,255,255,.07);
+  --line2:rgba(255,255,255,.12);
+  --good:#16A34A;
+  --warn:#D97706;
+  --blue:#1E5EDB;
+  --red:#DC2626;
+  --purple:#8B5CF6;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Sora',sans-serif;background:var(--bg);color:var(--ink);line-height:1.6}
+
+/* NAV */
+nav{position:sticky;top:0;z-index:100;background:rgba(8,14,28,.96);backdrop-filter:blur(12px);border-bottom:1px solid var(--line);padding:0 40px;height:60px;display:flex;align-items:center;justify-content:space-between}
+.nav-logo{font-size:18px;font-weight:800;color:var(--ink);text-decoration:none;letter-spacing:-0.5px}
+.nav-logo span{color:var(--teal)}
+.nav-links{display:flex;gap:28px;align-items:center}
+.nav-links a{color:rgba(255,255,255,.6);text-decoration:none;font-size:14px;font-weight:500;transition:color .2s}
+.nav-links a:hover{color:#fff}
+.nav-cta{background:var(--teal);color:#fff !important;padding:8px 18px;border-radius:6px;font-weight:600 !important}
+
+/* HERO */
+.hero{padding:100px 40px 80px;max-width:960px;margin:0 auto;text-align:center}
+.hero-eyebrow{font-size:11px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--teal);margin-bottom:20px}
+.hero h1{font-size:clamp(38px,6vw,76px);font-weight:900;line-height:1.08;letter-spacing:-2.5px;margin-bottom:28px}
+.hero h1 em{color:var(--teal);font-style:normal}
+.hero-lead{font-size:18px;color:rgba(255,255,255,.6);max-width:560px;margin:0 auto;line-height:1.75}
+.hero-scroll{margin-top:48px;color:rgba(255,255,255,.2);font-size:12px;letter-spacing:.1em;text-transform:uppercase}
+
+/* SECTION BASE */
+.section{max-width:960px;margin:0 auto;padding:80px 40px}
+.section+.section{border-top:1px solid var(--line)}
+.section-label{font-size:11px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--teal);margin-bottom:14px}
+.section-title{font-size:clamp(26px,4vw,44px);font-weight:800;letter-spacing:-1px;line-height:1.12;margin-bottom:16px}
+.section-title em{font-style:normal}
+.section-sub{font-size:16px;color:rgba(255,255,255,.6);max-width:580px;line-height:1.75;margin-bottom:48px}
+
+/* STAT GRID */
+.stat-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-bottom:40px}
+.stat-card{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:24px;position:relative;overflow:hidden;transition:border-color .25s}
+.stat-card:hover{border-color:rgba(22,184,178,.35)}
+.stat-card::after{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,var(--teal),#0ea5e9);transform:scaleX(0);transform-origin:left;transition:transform .3s}
+.stat-card:hover::after{transform:scaleX(1)}
+.stat-num{font-size:38px;font-weight:900;color:var(--ink);letter-spacing:-1.5px;line-height:1}
+.stat-num sup{font-size:20px;color:var(--teal)}
+.stat-label{font-size:13px;color:rgba(255,255,255,.55);margin-top:8px;line-height:1.5}
+.stat-badge{display:inline-block;margin-top:10px;font-size:10px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--teal);background:rgba(22,184,178,.1);padding:3px 8px;border-radius:4px}
+
+/* COMPARISON BARS */
+.comparison-block{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:28px;margin:32px 0}
+.comparison-block-title{font-size:12px;font-weight:700;color:var(--muted);text-transform:uppercase;letter-spacing:.07em;margin-bottom:24px}
+.comp-row{display:grid;grid-template-columns:110px 1fr 56px;gap:14px;align-items:center;margin-bottom:14px}
+.comp-country{font-size:13px;font-weight:600;color:var(--ink)}
+.comp-track{background:rgba(255,255,255,.05);border-radius:5px;height:28px;overflow:hidden}
+.comp-fill{height:100%;border-radius:5px;display:flex;align-items:center;padding-left:12px;font-size:11px;font-weight:700;color:rgba(255,255,255,.9);white-space:nowrap}
+.comp-pct{font-size:13px;font-weight:700;color:var(--ink);text-align:right}
+.comp-note{font-size:12px;color:var(--muted);margin-top:16px;padding-top:16px;border-top:1px solid var(--line);line-height:1.6}
+
+/* CHART WRAP */
+.chart-wrap{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:28px;margin:24px 0}
+.chart-wrap-title{font-size:12px;font-weight:700;color:var(--muted);text-transform:uppercase;letter-spacing:.07em;margin-bottom:20px}
+.chart-note{font-size:12px;color:var(--muted);margin-top:16px;line-height:1.6;padding-top:14px;border-top:1px solid var(--line)}
+
+/* TAKE â GIVE SHIFT */
+.shift-wrap{margin:40px 0}
+.shift-header{display:grid;grid-template-columns:1fr 60px 1fr;gap:0;margin-bottom:0}
+.shift-head{padding:16px 28px;border-radius:12px 12px 0 0;font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase}
+.shift-head.old{background:rgba(220,38,38,.08);color:var(--red);border:1px solid rgba(220,38,38,.18);border-bottom:none}
+.shift-head.arrow-col{display:flex;align-items:center;justify-content:center;font-size:24px;color:var(--teal);padding:0}
+.shift-head.new{background:rgba(22,184,178,.06);color:var(--teal);border:1px solid rgba(22,184,178,.18);border-bottom:none;text-align:right}
+.shift-body{display:grid;grid-template-columns:1fr 60px 1fr;border-radius:0 0 12px 12px;overflow:hidden}
+.shift-col{background:var(--panel);padding:28px}
+.shift-col.old{border:1px solid rgba(220,38,38,.18);border-top:none;border-right:none}
+.shift-col.new{border:1px solid rgba(22,184,178,.18);border-top:none;border-left:none}
+.shift-mid{background:var(--bg);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:6px;padding:12px 4px;border-top:1px solid var(--line)}
+.shift-mini-arrow{color:rgba(22,184,178,.4);font-size:16px}
+.shift-title{font-size:20px;font-weight:800;margin-bottom:20px;letter-spacing:-0.5px}
+.shift-col.old .shift-title{color:rgba(255,255,255,.8)}
+.shift-col.new .shift-title{color:var(--teal)}
+.shift-items{list-style:none;display:flex;flex-direction:column;gap:2px}
+.shift-items li{font-size:13px;color:rgba(255,255,255,.65);padding:10px 12px;border-radius:6px;display:flex;align-items:flex-start;gap:10px;line-height:1.4}
+.shift-items li:hover{background:rgba(255,255,255,.04)}
+.shift-mark{flex-shrink:0;font-weight:800;font-size:13px}
+.old .shift-mark{color:var(--red)}
+.new .shift-mark{color:var(--teal)}
+
+/* PULL QUOTE */
+.pull-quote{border-left:3px solid var(--teal);padding:24px 32px;background:rgba(22,184,178,.05);border-radius:0 10px 10px 0;margin:40px 0}
+.pull-quote p{font-size:17px;font-weight:500;line-height:1.7;color:var(--ink);font-style:italic}
+.pull-quote cite{display:block;margin-top:12px;font-size:13px;color:var(--muted);font-style:normal}
+
+/* TIMELINE */
+.timeline{position:relative;padding-left:60px;margin:40px 0}
+.timeline::before{content:'';position:absolute;left:24px;top:8px;bottom:0;width:2px;background:linear-gradient(180deg,var(--teal) 0%,rgba(22,184,178,.1) 100%)}
+.tl-item{position:relative;margin-bottom:36px}
+.tl-dot{position:absolute;left:-48px;width:46px;height:46px;border-radius:50%;background:var(--panel);border:2px solid var(--teal);display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:800;color:var(--teal);top:0}
+.tl-year{font-size:11px;font-weight:700;color:var(--teal);letter-spacing:.06em;margin-bottom:6px}
+.tl-title{font-size:17px;font-weight:700;margin-bottom:8px;letter-spacing:-0.3px}
+.tl-body{font-size:14px;color:rgba(255,255,255,.6);line-height:1.7}
+
+/* NAKKAN GRID */
+.nakkan-grid{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin:40px 0}
+.nakkan-card{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:28px;transition:border-color .25s}
+.nakkan-card:hover{border-color:rgba(22,184,178,.3)}
+.nakkan-icon{font-size:26px;margin-bottom:14px}
+.nakkan-card-title{font-size:16px;font-weight:700;margin-bottom:10px;letter-spacing:-0.3px}
+.nakkan-card-body{font-size:14px;color:rgba(255,255,255,.6);line-height:1.7}
+
+/* NETWORK */
+.network-wrap{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:32px;margin:32px 0;text-align:center}
+.network-note{font-size:12px;color:var(--muted);margin-top:20px;line-height:1.6;text-align:left;padding-top:16px;border-top:1px solid var(--line)}
+
+/* HIGHLIGHT ROW */
+.highlight-row{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin:32px 0}
+.highlight-item{background:var(--panel);border:1px solid var(--line);border-radius:10px;padding:20px 24px;text-align:center}
+.highlight-num{font-size:32px;font-weight:900;color:var(--teal);letter-spacing:-1px;line-height:1}
+.highlight-label{font-size:12px;color:var(--muted);margin-top:6px;line-height:1.4}
+
+/* CTA */
+.cta-strip{background:linear-gradient(160deg,#060C1A,#0A2235);border-top:1px solid var(--line);padding:88px 40px;text-align:center}
+.cta-strip h2{font-size:34px;font-weight:800;letter-spacing:-1px;margin-bottom:14px}
+.cta-strip p{color:rgba(255,255,255,.55);margin-bottom:36px;font-size:16px;max-width:480px;margin-left:auto;margin-right:auto;line-height:1.7}
+.cta-btn{display:inline-block;background:var(--teal);color:#fff;padding:14px 34px;border-radius:8px;text-decoration:none;font-weight:700;font-size:15px;transition:opacity .2s}
+.cta-btn:hover{opacity:.85}
+
+footer{padding:24px 40px;text-align:center;font-size:13px;color:rgba(255,255,255,.3);border-top:1px solid var(--line)}
+
+/* SECTION DIVIDER */
+.section-divider{border:none;border-top:1px solid var(--line);max-width:960px;margin:0 auto}
+
+@media(max-width:700px){
+  .stat-grid{grid-template-columns:1fr 1fr}
+  .nakkan-grid{grid-template-columns:1fr}
+  .highlight-row{grid-template-columns:1fr 1fr}
+  .shift-header,.shift-body{grid-template-columns:1fr}
+  .shift-head.arrow-col,.shift-mid{display:none}
+  .shift-col.old{border-radius:12px;margin-bottom:12px;border:1px solid rgba(220,38,38,.18)}
+  .shift-col.new{border-radius:12px;border:1px solid rgba(22,184,178,.18)}
+  nav{padding:0 20px}
+  .hero,.section,.cta-strip{padding-left:20px;padding-right:20px}
+  .comp-row{grid-template-columns:90px 1fr 46px}
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a href="sample.html" class="nav-logo">blue<span>shift</span></a>
+  <div class="nav-links">
+    <a href="about.html">About</a>
+    <a href="why.html" style="color:#fff;font-weight:600">Why Us</a>
+    <a href="brief.html" class="nav-cta">Get Your Report â</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-eyebrow">Our Thesis</div>
+  <h1>Why <em>Japan.</em><br>Why <em>Now.</em><br>Why <em>Us.</em></h1>
+  <p class="hero-lead">The Japan opportunity is structural, not cyclical. Most companies understand this too late â or enter it wrong. Here's how we see it.</p>
+</section>
+
+<!-- ââââââââââââââââââââââââââââââââââââââââââ
+     SECTION 01 â WHY JAPAN
+ââââââââââââââââââââââââââââââââââââââââââââ -->
+<section class="section">
+  <div class="section-label">01 â Why Japan</div>
+  <h2 class="section-title">The world's most underserved<br>enterprise market.</h2>
+  <p class="section-sub">Japan is the 3rd largest economy on earth â with enterprise software adoption running a decade behind the West. That gap is not a headwind. It's the opportunity.</p>
+
+  <div class="stat-grid">
+    <div class="stat-card">
+      <div class="stat-num">#3<sup></sup></div>
+      <div class="stat-label">Economy globally by GDP at $4.2 trillion â larger than Germany and the UK</div>
+      <div class="stat-badge">Structural weight</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-num">$115<sup>B</sup></div>
+      <div class="stat-label">Japan IT market size â 3rd globally, ahead of Germany and France combined</div>
+      <div class="stat-badge">Real scale</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-num">18<sup>%</sup></div>
+      <div class="stat-label">Enterprise SaaS CAGR in Japan 2024â2028 â fastest acceleration in the G7</div>
+      <div class="stat-badge">Late = steep curve</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-num">12<sup>%</sup></div>
+      <div class="stat-label">Current SaaS penetration in Japanese enterprise â versus 45% in the United States</div>
+      <div class="stat-badge">The gap is closing fast</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-num">70<sup>%</sup></div>
+      <div class="stat-label">Foreign company Japan entries that fail in year 2 without local expertise</div>
+      <div class="stat-badge">Entry matters most</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-num">$2.9<sup>T</sup></div>
+      <div class="stat-label">ESG assets under management in Japan â 3rd globally, growing 40% per year</div>
+      <div class="stat-badge">Sustainability = mandate</div>
+    </div>
+  </div>
+
+  <!-- SaaS Penetration Comparison -->
+  <div class="comparison-block">
+    <div class="comparison-block-title">Enterprise SaaS Adoption Rate â G7 Countries (2024 est.)</div>
+    <div class="comp-row">
+      <div class="comp-country">ðºð¸ USA</div>
+      <div class="comp-track"><div class="comp-fill" style="width:90%;background:linear-gradient(90deg,#1E5EDB,#3B82F6)">45%</div></div>
+      <div class="comp-pct">45%</div>
+    </div>
+    <div class="comp-row">
+      <div class="comp-country">ð¬ð§ UK</div>
+      <div class="comp-track"><div class="comp-fill" style="width:70%;background:linear-gradient(90deg,#7C3AED,#8B5CF6)">35%</div></div>
+      <div class="comp-pct">35%</div>
+    </div>
+    <div class="comp-row">
+      <div class="comp-country">ð©ðª Germany</div>
+      <div class="comp-track"><div class="comp-fill" style="width:56%;background:linear-gradient(90deg,#6366F1,#818CF8)">28%</div></div>
+      <div class="comp-pct">28%</div>
+    </div>
+    <div class="comp-row">
+      <div class="comp-country">ð¨ð¦ Canada</div>
+      <div class="comp-track"><div class="comp-fill" style="width:50%;background:linear-gradient(90deg,#4F46E5,#6366F1)">25%</div></div>
+      <div class="comp-pct">25%</div>
+    </div>
+    <div class="comp-row">
+      <div class="comp-country">ð«ð· France</div>
+      <div class="comp-track"><div class="comp-fill" style="width:40%;background:linear-gradient(90deg,#7C3AED,#9333EA)">20%</div></div>
+      <div class="comp-pct">20%</div>
+    </div>
+    <div class="comp-row">
+      <div class="comp-country">ð¯ðµ Japan</div>
+      <div class="comp-track"><div class="comp-fill" style="width:24%;background:linear-gradient(90deg,#0d9488,#16B8B2)">12%</div></div>
+      <div class="comp-pct" style="color:var(--teal);font-weight:800">12%</div>
+    </div>
+    <div class="comp-note">
+      Japan's adoption gap versus the US represents a <strong style="color:var(--ink)">$38B+ incremental addressable market</strong> at current enterprise SaaS spend ratios â and the gap is narrowing at 18% per year. Companies that establish position now will hold the relationships when the majority of procurement decisions flip.
+    </div>
+  </div>
+
+  <!-- Market Attractiveness Radar -->
+  <div class="chart-wrap">
+    <div class="chart-wrap-title">Japan Market Attractiveness â Key Dimensions (Score out of 100)</div>
+    <div style="max-height:320px;position:relative"><canvas id="chartAttractiveness"></canvas></div>
+    <div class="chart-note">Japan scores exceptionally on talent quality, IP protection, legal stability, and market size. Procurement accessibility â the cultural and relational barrier to vendor selection â is the outlier. That's exactly what local expertise addresses.</div>
+  </div>
+</section>
+
+<!-- ââââââââââââââââââââââââââââââââââââââââââ
+     SECTION 02 â TAKE â GIVE
+ââââââââââââââââââââââââââââââââââââââââââââ -->
+<section class="section">
+  <div class="section-label">02 â The Inflection Point</div>
+  <h2 class="section-title">The economy is shifting from<br><em style="color:var(--red)">Take</em> to <em style="color:var(--teal)">Give.</em></h2>
+  <p class="section-sub">For 30 years, global expansion meant extracting value from new markets â standardized product, fast payback, local offices as cost centers. Japan has always pushed back on this model. Now the rest of the world is catching up to why.</p>
+
+  <div class="shift-wrap">
+    <div class="shift-header">
+      <div class="shift-head old">The Old Model â Take</div>
+      <div class="shift-head arrow-col"></div>
+      <div class="shift-head new">The New Model â Give</div>
+    </div>
+    <div class="shift-body">
+      <div class="shift-col old">
+        <div class="shift-title">Extract &amp; Scale</div>
+        <ul class="shift-items">
+          <li><span class="shift-mark">Ã</span>Standardized product, forced localization</li>
+          <li><span class="shift-mark">Ã</span>Short-term ROI, fast payback pressure</li>
+          <li><span class="shift-mark">Ã</span>Market share as the primary metric</li>
+          <li><span class="shift-mark">Ã</span>Local hires as cost reduction, not asset</li>
+          <li><span class="shift-mark">Ã</span>Exit strategy baked in from day one</li>
+          <li><span class="shift-mark">Ã</span>Partners as pure distribution channel</li>
+          <li><span class="shift-mark">Ã</span>Knowledge flows one direction: HQ â market</li>
+        </ul>
+      </div>
+      <div class="shift-mid">
+        <span class="shift-mini-arrow">â</span>
+        <span class="shift-mini-arrow">â</span>
+        <span class="shift-mini-arrow">â</span>
+      </div>
+      <div class="shift-col new">
+        <div class="shift-title">Co-Create &amp; Bridge</div>
+        <ul class="shift-items">
+          <li><span class="shift-mark">â</span>Product evolved by the market's constraints</li>
+          <li><span class="shift-mark">â</span>Long-term relationship; trust as capital</li>
+          <li><span class="shift-mark">â</span>Ecosystem health as the primary metric</li>
+          <li><span class="shift-mark">â</span>Local network as durable competitive moat</li>
+          <li><span class="shift-mark">â</span>Japan as R&amp;D lab for global product</li>
+          <li><span class="shift-mark">â</span>Partners as co-investors in shared growth</li>
+          <li><span class="shift-mark">â</span>Knowledge flows both ways: market â HQ too</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- Chart: decoupling / shift over time -->
+  <div class="chart-wrap" style="margin-top:32px">
+    <div class="chart-wrap-title">The Shift in Motion â Japan Enterprise Software Market (2015â2028F)</div>
+    <div style="max-height:280px;position:relative"><canvas id="chartShift"></canvas></div>
+    <div class="chart-note">"Legacy IT spend" = on-premise, maintenance contracts, hardware-bound. "Cloud &amp; SaaS" = subscription, API-native. The crossover point (~2023â2024) is the inflection now underway. Companies entering Japan post-crossover inherit a fundamentally different buying environment.</div>
+  </div>
+
+  <div class="pull-quote">
+    <p>"Japan didn't fail to digitize because it's conservative. It built analog systems that work â then waited for digital systems that work equally well. That's not resistance. That's a standard. And when Japan buys, it buys deeply."</p>
+    <cite>â Tomoaki Nakao, Founder &amp; CEO, Blueshift Inc.</cite>
+  </div>
+</section>
+
+<!-- ââââââââââââââââââââââââââââââââââââââââââ
+     SECTION 03 â PLANETARY BOUNDARIES
+ââââââââââââââââââââââââââââââââââââââââââââ -->
+<section class="section">
+  <div class="section-label">03 â The Bigger Frame</div>
+  <h2 class="section-title">Japan as the world's test lab<br>for bounded growth.</h2>
+  <p class="section-sub">Japan operates within tighter physical, demographic, and resource constraints than almost any other major economy. That pressure has produced systems in manufacturing, energy, urban design, and supply chain that the rest of the world now urgently needs to learn from.</p>
+
+  <!-- Planetary Boundaries Radar -->
+  <div class="chart-wrap">
+    <div class="chart-wrap-title">Planetary Boundaries â Japan vs. Global Average (Sustainability Posture Score)</div>
+    <div style="max-height:360px;position:relative"><canvas id="chartBoundaries"></canvas></div>
+    <div class="chart-note">Score represents relative performance within each planetary boundary dimension â higher = more sustainable posture relative to safe operating limits. Japan leads on resource productivity, circular economy policy, and urban efficiency. Climate commitment and biodiversity pressure remain shared global challenges. <em style="color:rgba(255,255,255,.4)">(Illustrative index based on published indicators.)</em></div>
+  </div>
+
+  <div class="highlight-row">
+    <div class="highlight-item">
+      <div class="highlight-num">99%</div>
+      <div class="highlight-label">Literacy rate â the talent base is deep, trained, and highly process-oriented</div>
+    </div>
+    <div class="highlight-item">
+      <div class="highlight-num">#3</div>
+      <div class="highlight-label">Global IP filings â Japan innovates relentlessly within constraints</div>
+    </div>
+    <div class="highlight-item">
+      <div class="highlight-num">Â¥150T</div>
+      <div class="highlight-label">Green transition investment target â 2050 carbon neutrality is economic policy, not aspiration</div>
+    </div>
+  </div>
+
+  <div class="pull-quote" style="margin-top:8px">
+    <p>"The companies that will win the next wave of Japan market entry are the ones building products that perform beautifully within limits â energy, space, headcount, time. Japan has been optimizing for that for decades. Your product either fits that world, or it doesn't."</p>
+    <cite>â Tomoaki Nakao</cite>
+  </div>
+</section>
+
+<!-- ââââââââââââââââââââââââââââââââââââââââââ
+     SECTION 04 â WHY NAKKAN
+ââââââââââââââââââââââââââââââââââââââââââââ -->
+<section class="section">
+  <div class="section-label">04 â Why Us</div>
+  <h2 class="section-title">20 years inside the machine<br>that runs Japan.</h2>
+  <p class="section-sub">Blueshift was founded by Tomoaki Nakao â a former Business Development Manager at Sumitomo Corporation, one of Japan's five major sogo shosha (general trading companies). This is not a typical consulting credential.</p>
+
+  <!-- Sogo Shosha explainer -->
+  <div class="comparison-block" style="margin-bottom:40px">
+    <div class="comparison-block-title">What is a Sogo Shosha?</div>
+    <p style="font-size:14px;color:rgba(255,255,255,.65);line-height:1.8;margin-bottom:20px">
+      Japan's five major general trading companies â Mitsubishi, Mitsui, Sumitomo, Itochu, Marubeni â collectively manage over <strong style="color:var(--ink)">$800B in annual revenue</strong> and sit at the operational center of Japanese industry. They are the companies that other large companies route major procurement, investment, and partnership decisions through.
+    </p>
+    <p style="font-size:14px;color:rgba(255,255,255,.65);line-height:1.8">
+      Two decades inside Sumitomo Corporation means two decades at the intersection of <strong style="color:var(--ink)">capital allocation, industrial partnership, cross-border deal-making, and government relations</strong> â the four levers that determine how deals actually get done in Japan.
+    </p>
+  </div>
+
+  <!-- Network SVG -->
+  <div class="network-wrap">
+    <div class="chart-wrap-title" style="text-align:left;margin-bottom:24px">The Sogo Shosha Network â What 20 Years Inside Builds</div>
+    <svg id="networkSvg" viewBox="0 0 720 380" xmlns="http://www.w3.org/2000/svg" style="width:100%;max-width:720px;height:auto"></svg>
+    <div class="network-note">A sogo shosha sits at the intersection of industry, capital, government, and cross-border trade. Spending 20 years as an insider means knowing which relationships open which doors â and which doors exist at all. Most foreign companies don't know the right questions to ask. We know the answers before the questions are formed.</div>
+  </div>
+
+  <!-- Timeline -->
+  <div class="timeline">
+    <div class="tl-item">
+      <div class="tl-dot">01</div>
+      <div class="tl-year">2000s â Early Career, Sumitomo Corporation</div>
+      <div class="tl-title">Commodity Trade &amp; Cross-Border Deal Structuring</div>
+      <div class="tl-body">Managed large-scale commodity trade flows across Asia and global markets. Built the pattern recognition for how Japanese buyers evaluate vendors â their risk tolerance, their approval chains, and why supplier relationships, once established, rarely switch.</div>
+    </div>
+    <div class="tl-item">
+      <div class="tl-dot">02</div>
+      <div class="tl-year">2010s â Senior Role, Sumitomo Corporation</div>
+      <div class="tl-title">Investment Evaluation &amp; Business Development</div>
+      <div class="tl-body">Evaluated cross-border investment targets, led negotiations with foreign partners, and structured joint ventures through Japanese keiretsu networks. Learned which foreign companies Japan adopts â and why. Most failures were not product failures. They were positioning failures.</div>
+    </div>
+    <div class="tl-item">
+      <div class="tl-dot">03</div>
+      <div class="tl-year">2020s â Global Markets</div>
+      <div class="tl-title">Watching the SaaS Wave Arrive â and Misfire</div>
+      <div class="tl-body">Observed the global SaaS wave reach Japan a decade late â and watched which companies navigated it correctly (few) versus which burned capital on the wrong partners, wrong enterprise segments, and wrong pricing models (many). The pattern was consistent and avoidable.</div>
+    </div>
+    <div class="tl-item">
+      <div class="tl-dot">04</div>
+      <div class="tl-year">2025 â Present</div>
+      <div class="tl-title">Founded Blueshift Inc.</div>
+      <div class="tl-body">Built to give global companies the same quality of Japan market intelligence that Sumitomo's internal research teams use â in a format that's fast, transparent, and priced for companies at the evaluation stage, not only the fully committed ones.</div>
+    </div>
+  </div>
+
+  <div class="nakkan-grid">
+    <div class="nakkan-card">
+      <div class="nakkan-icon">ðï¸</div>
+      <div class="nakkan-card-title">Inside the Real Decision Process</div>
+      <div class="nakkan-card-body">Japanese enterprise procurement involves nemawashi (groundwork), ringi (approval routing), and stakeholders most foreign companies never meet. 20 years navigating this means knowing which shortcuts destroy trust and which ones build it.</div>
+    </div>
+    <div class="nakkan-card">
+      <div class="nakkan-icon">ð</div>
+      <div class="nakkan-card-title">The Bridge, Not the Translator</div>
+      <div class="nakkan-card-body">Translators convert words. Bridges convert value. We help global companies restructure their offering â positioning, pricing, partnership model â so it lands in Japan the way it was intended to, not just the way it literally reads.</div>
+    </div>
+    <div class="nakkan-card">
+      <div class="nakkan-icon">ð­</div>
+      <div class="nakkan-card-title">Pattern Recognition Across Sectors</div>
+      <div class="nakkan-card-body">From commodity trade to SaaS, energy infrastructure to fintech â the surface features differ but the underlying patterns repeat. We've seen enough entry attempts to know which signals predict success before the first meeting happens.</div>
+    </div>
+    <div class="nakkan-card">
+      <div class="nakkan-icon">â¡</div>
+      <div class="nakkan-card-title">Speed Without Shortcuts</div>
+      <div class="nakkan-card-body">Traditional consulting delivers depth over months. We deliver the same depth in 3â5 days because the knowledge isn't new â it's structured, on-demand access to 20 years of already-accumulated market intelligence.</div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<div class="cta-strip">
+  <h2>Ready to understand Japan?</h2>
+  <p>Start with a brief. We'll respond within 24 hours with a tailored proposal â no commitment required.</p>
+  <a href="brief.html" class="cta-btn">Start Your Brief â</a>
+</div>
+
+<footer>Â© 2026 Blueshift Inc. Â· blueshift-inc.jp Â· Tomoaki Nakao Â· ceo@blueshift-inc.jp</footer>
+
+<script>
+Chart.defaults.font.family = "'Sora', sans-serif";
+Chart.defaults.font.size = 12;
+Chart.defaults.color = '#8A96AA';
+
+/* ââ Chart 1: Market Attractiveness Radar ââ */
+new Chart(document.getElementById('chartAttractiveness'), {
+  type: 'radar',
+  data: {
+    labels: ['Market Size', 'Talent Quality', 'IP Protection', 'ESG Momentum', 'Digital Gap\n(Opportunity)', 'Legal Stability', 'Procurement\nAccessibility'],
+    datasets: [
+      {
+        label: 'Japan',
+        data: [88, 90, 95, 84, 95, 97, 38],
+        borderColor: '#16B8B2',
+        backgroundColor: 'rgba(22,184,178,0.1)',
+        borderWidth: 2.5,
+        pointBackgroundColor: '#16B8B2',
+        pointRadius: 5
+      },
+      {
+        label: 'G7 Average',
+        data: [62, 72, 76, 66, 52, 80, 68],
+        borderColor: 'rgba(255,255,255,0.2)',
+        backgroundColor: 'rgba(255,255,255,0.03)',
+        borderWidth: 1.5,
+        pointBackgroundColor: 'rgba(255,255,255,0.35)',
+        pointRadius: 4,
+        borderDash: [5,4]
+      }
+    ]
+  },
+  options: {
+    responsive: true,
+    maintainAspectRatio: false,
+    plugins: {
+      legend: { position: 'top', labels: { boxWidth: 14, padding: 24 } },
+      tooltip: { callbacks: { label: c => ' ' + c.dataset.label + ': ' + c.raw + ' / 100' } }
+    },
+    scales: {
+      r: {
+        min: 0, max: 100,
+        ticks: { stepSize: 25, display: false },
+        grid: { color: 'rgba(255,255,255,0.07)' },
+        angleLines: { color: 'rgba(255,255,255,0.07)' },
+        pointLabels: { font: { size: 11, family: "'Sora'" }, color: '#8A96AA' }
+      }
+    }
+  }
+});
+
+/* ââ Chart 2: TakeâGive Shift Line ââ */
+new Chart(document.getElementById('chartShift'), {
+  type: 'line',
+  data: {
+    labels: ['2015','2016','2017','2018','2019','2020','2021','2022','2023','2024','2025F','2026F','2027F','2028F'],
+    datasets: [
+      {
+        label: 'Legacy IT Spend (on-prem / hardware)',
+        data: [72,70,68,65,61,56,50,43,36,30,24,19,15,12],
+        borderColor: 'rgba(220,38,38,0.6)',
+        backgroundColor: 'rgba(220,38,38,0.05)',
+        borderWidth: 2,
+        pointRadius: 3,
+        fill: true,
+        tension: 0.4
+      },
+      {
+        label: 'Cloud & SaaS Spend',
+        data: [8,11,14,18,23,28,36,45,54,62,70,76,81,86],
+        borderColor: '#16B8B2',
+        backgroundColor: 'rgba(22,184,178,0.07)',
+        borderWidth: 2.5,
+        pointRadius: 3,
+        fill: true,
+        tension: 0.4
+      }
+    ]
+  },
+  options: {
+    responsive: true,
+    maintainAspectRatio: false,
+    plugins: {
+      legend: { position: 'top', labels: { boxWidth: 14, padding: 20 } },
+      tooltip: { callbacks: { label: c => ' ' + c.dataset.label + ': ' + c.parsed.y + '%' } },
+      annotation: {}
+    },
+    scales: {
+      y: {
+        min: 0, max: 100,
+        ticks: { callback: v => v + '%' },
+        grid: { color: 'rgba(255,255,255,0.06)' }
+      },
+      x: { grid: { display: false } }
+    }
+  }
+});
+
+/* ââ Chart 3: Planetary Boundaries Radar ââ */
+new Chart(document.getElementById('chartBoundaries'), {
+  type: 'radar',
+  data: {
+    labels: [
+      'Climate\nStability',
+      'Resource\nProductivity',
+      'Biodiversity',
+      'Circular\nEconomy',
+      'Urban\nEfficiency',
+      'Ocean\nHealth',
+      'Air Quality',
+      'Land Use\nEfficiency',
+      'Freshwater\nManagement'
+    ],
+    datasets: [
+      {
+        label: 'Japan',
+        data: [58, 88, 52, 80, 91, 62, 73, 85, 77],
+        borderColor: '#16B8B2',
+        backgroundColor: 'rgba(22,184,178,0.1)',
+        borderWidth: 2.5,
+        pointBackgroundColor: '#16B8B2',
+        pointRadius: 5
+      },
+      {
+        label: 'Global Average',
+        data: [44, 52, 36, 46, 50, 45, 50, 54, 57],
+        borderColor: 'rgba(217,119,6,0.65)',
+        backgroundColor: 'rgba(217,119,6,0.05)',
+        borderWidth: 1.5,
+        pointBackgroundColor: 'rgba(217,119,6,0.65)',
+        pointRadius: 4,
+        borderDash: [5,4]
+      }
+    ]
+  },
+  options: {
+    responsive: true,
+    maintainAspectRatio: false,
+    plugins: {
+      legend: { position: 'top', labels: { boxWidth: 14, padding: 24 } },
+      tooltip: { callbacks: { label: c => ' ' + c.dataset.label + ': ' + c.raw + ' / 100' } }
+    },
+    scales: {
+      r: {
+        min: 0, max: 100,
+        ticks: { stepSize: 25, display: false },
+        grid: { color: 'rgba(255,255,255,0.07)' },
+        angleLines: { color: 'rgba(255,255,255,0.07)' },
+        pointLabels: { font: { size: 11, family: "'Sora'" }, color: '#8A96AA' }
+      }
+    }
+  }
+});
+
+/* ââ Network SVG ââ */
+(function() {
+  const svg = document.getElementById('networkSvg');
+
+  const nodes = [
+    { id:'tn',  x:360, y:190, r:42, fill:'#0d9488', stroke:'#16B8B2', sw:2, label:['Tomoaki','Nakao'], fc:'#fff', fs:13, fw:700 },
+    { id:'sc',  x:360, y:58,  r:30, fill:'#1e3a6e', stroke:'#1E5EDB', sw:2, label:['Sumitomo','Corp.'],  fc:'#93C5FD', fs:11, fw:600 },
+    { id:'jp',  x:175, y:110, r:26, fill:'#0F1E35', stroke:'#16B8B2', sw:1.5, label:['Japanese','Enterprise'], fc:'#8A96AA', fs:10, fw:500 },
+    { id:'gov', x:545, y:110, r:24, fill:'#0F1E35', stroke:'#1E5EDB', sw:1.5, label:['Gov &','Policy'], fc:'#8A96AA', fs:10, fw:500 },
+    { id:'kei', x:90,  y:230, r:22, fill:'#0F1E35', stroke:'#8B5CF6', sw:1.5, label:['Keiretsu','Network'], fc:'#8A96AA', fs:10, fw:500 },
+    { id:'si',  x:170, y:320, r:24, fill:'#0F1E35', stroke:'#16B8B2', sw:1.5, label:['SIs &','Resellers'], fc:'#8A96AA', fs:10, fw:500 },
+    { id:'fin', x:630, y:230, r:22, fill:'#0F1E35', stroke:'#1E5EDB', sw:1.5, label:['Financial','Institutions'], fc:'#8A96AA', fs:9,  fw:500 },
+    { id:'gl',  x:545, y:320, r:24, fill:'#0F1E35', stroke:'#F59E0B', sw:1.5, label:['Global','Tech Cos'], fc:'#8A96AA', fs:10, fw:500 },
+    { id:'ch',  x:360, y:330, r:20, fill:'#0F1E35', stroke:'#16B8B2', sw:1.5, label:['Channel','Partners'], fc:'#8A96AA', fs:10, fw:500 },
+    { id:'vc',  x:100, y:145, r:18, fill:'#0F1E35', stroke:'#EC4899', sw:1.5, label:['Investors'], fc:'#8A96AA', fs:10, fw:500 },
+  ];
+
+  const edges = [
+    ['tn','sc',true],['tn','jp',true],['tn','gov',true],['tn','kei',true],
+    ['tn','si',true],['tn','fin',true],['tn','gl',true],['tn','ch',true],
+    ['tn','vc',true],
+    ['sc','gov',false],['sc','fin',false],['jp','si',false],['gl','ch',false],['jp','kei',false]
+  ];
+
+  // Edges
+  edges.forEach(([a,b,main]) => {
+    const na = nodes.find(n=>n.id===a), nb = nodes.find(n=>n.id===b);
+    const line = document.createElementNS('http://www.w3.org/2000/svg','line');
+    line.setAttribute('x1',na.x); line.setAttribute('y1',na.y);
+    line.setAttribute('x2',nb.x); line.setAttribute('y2',nb.y);
+    line.setAttribute('stroke', main ? 'rgba(22,184,178,0.28)' : 'rgba(255,255,255,0.06)');
+    line.setAttribute('stroke-width', main ? '1.8' : '1');
+    svg.appendChild(line);
+  });
+
+  // Nodes
+  nodes.forEach(n => {
+    const g = document.createElementNS('http://www.w3.org/2000/svg','g');
+    // glow for center node
+    if (n.id === 'tn') {
+      const glow = document.createElementNS('http://www.w3.org/2000/svg','circle');
+      glow.setAttribute('cx',n.x); glow.setAttribute('cy',n.y); glow.setAttribute('r',n.r+10);
+      glow.setAttribute('fill','rgba(22,184,178,0.08)');
+      g.appendChild(glow);
+    }
+    const c = document.createElementNS('http://www.w3.org/2000/svg','circle');
+    c.setAttribute('cx',n.x); c.setAttribute('cy',n.y); c.setAttribute('r',n.r);
+    c.setAttribute('fill',n.fill);
+    c.setAttribute('stroke',n.stroke); c.setAttribute('stroke-width',n.sw);
+    g.appendChild(c);
+
+    n.label.forEach((line,i) => {
+      const t = document.createElementNS('http://www.w3.org/2000/svg','text');
+      const offset = (i - (n.label.length-1)/2) * (n.fs + 2);
+      t.setAttribute('x',n.x); t.setAttribute('y',n.y + offset + n.fs*0.38);
+      t.setAttribute('text-anchor','middle');
+      t.setAttribute('font-size',n.fs);
+      t.setAttribute('font-weight',n.fw);
+      t.setAttribute('fill',n.fc);
+      t.setAttribute('font-family',"'Sora',sans-serif");
+      t.textContent = line;
+      g.appendChild(t);
+    });
+    svg.appendChild(g);
+  });
+})();
+</script>
+</body>
+</html>
