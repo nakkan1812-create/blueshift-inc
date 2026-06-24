@@ -32,10 +32,10 @@ body{font-family:'Sora',sans-serif;background:var(--bg);color:var(--ink);line-he
 nav{position:sticky;top:0;z-index:100;background:rgba(8,14,28,.96);backdrop-filter:blur(12px);border-bottom:1px solid var(--line);padding:0 40px;height:60px;display:flex;align-items:center;justify-content:space-between}
 .nav-logo{font-size:18px;font-weight:800;color:var(--ink);text-decoration:none;letter-spacing:-0.5px}
 .nav-logo span{color:var(--teal)}
-.nav-links{display:flex;gap:28px;align-items:center}
-.nav-links a{color:rgba(255,255,255,.6);text-decoration:none;font-size:14px;font-weight:500;transition:color .2s}
+.nav-links{display:flex;gap:20px;align-items:center}
+.nav-links a{color:rgba(255,255,255,.6);text-decoration:none;font-size:13px;font-weight:500;transition:color .2s}
 .nav-links a:hover{color:#fff}
-.nav-cta{background:var(--teal);color:#fff !important;padding:8px 18px;border-radius:6px;font-weight:600 !important}
+.nav-cta{background:var(--teal);color:#fff !important;padding:8px 16px;border-radius:6px;font-weight:600 !important;font-size:13px;white-space:nowrap}
 
 /* HERO */
 .hero{padding:100px 40px 80px;max-width:960px;margin:0 auto;text-align:center}
@@ -532,7 +532,7 @@ new Chart(document.getElementById('chartAttractiveness'), {
   options: {
     responsive: true,
     maintainAspectRatio: false,
-    layout: { padding: { top: 10, right: 20, bottom: 10, left: 20 } },
+    layout: { padding: { top: 10, right: 60, bottom: 10, left: 60 } },
     plugins: {
       legend: { position: 'top', labels: { boxWidth: 14, padding: 24 } },
       tooltip: { callbacks: { label: c => ' ' + c.dataset.label + ': ' + c.raw + ' / 100' } }
@@ -543,7 +543,7 @@ new Chart(document.getElementById('chartAttractiveness'), {
         ticks: { stepSize: 25, display: false },
         grid: { color: 'rgba(255,255,255,0.07)' },
         angleLines: { color: 'rgba(255,255,255,0.07)' },
-        pointLabels: { font: { size: 11, family: "'Sora'" }, color: '#8A96AA' }
+        pointLabels: { font: { size: 10, family: "'Sora'" }, color: '#8A96AA' }
       }
     }
   }
@@ -580,7 +580,7 @@ new Chart(document.getElementById('chartShift'), {
   options: {
     responsive: true,
     maintainAspectRatio: false,
-    layout: { padding: { top: 10, right: 20, bottom: 10, left: 20 } },
+    layout: { padding: { top: 10, right: 60, bottom: 10, left: 60 } },
     plugins: {
       legend: { position: 'top', labels: { boxWidth: 14, padding: 20 } },
       tooltip: { callbacks: { label: c => ' ' + c.dataset.label + ': ' + c.parsed.y + '%' } },
@@ -637,7 +637,7 @@ new Chart(document.getElementById('chartBoundaries'), {
   options: {
     responsive: true,
     maintainAspectRatio: false,
-    layout: { padding: { top: 10, right: 20, bottom: 10, left: 20 } },
+    layout: { padding: { top: 10, right: 60, bottom: 10, left: 60 } },
     plugins: {
       legend: { position: 'top', labels: { boxWidth: 14, padding: 24 } },
       tooltip: { callbacks: { label: c => ' ' + c.dataset.label + ': ' + c.raw + ' / 100' } }
@@ -648,7 +648,7 @@ new Chart(document.getElementById('chartBoundaries'), {
         ticks: { stepSize: 25, display: false },
         grid: { color: 'rgba(255,255,255,0.07)' },
         angleLines: { color: 'rgba(255,255,255,0.07)' },
-        pointLabels: { font: { size: 11, family: "'Sora'" }, color: '#8A96AA' }
+        pointLabels: { font: { size: 10, family: "'Sora'" }, color: '#8A96AA' }
       }
     }
   }
