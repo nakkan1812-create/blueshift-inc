@@ -4,38 +4,58 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Brief Received — Blueshift Inc.</title>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
 <style>
+:root{
+  --navy:#060C1A;--teal:#16B8B2;--teal-lt:#7DF0E0;--ink:#F4F6F8;--muted:#8A96AA;
+  --surface:#0D1829;--panel:#0F1E35;--bg:#080E1C;--line:rgba(255,255,255,.07);
+}
 *{box-sizing:border-box;margin:0;padding:0}
 html,body{height:100%}
-body{font-family:'Inter',sans-serif;background:linear-gradient(150deg,#0d1b3e 0%,#13295a 60%,#0e3a3a 100%);color:#fff;display:flex;flex-direction:column;-webkit-font-smoothing:antialiased}
-.nav{padding:20px 40px;display:flex;align-items:center}
-.logo{font-size:17px;font-weight:800;color:#fff;letter-spacing:-.03em;text-decoration:none}
-.logo span{color:#16B8B2}
-.main{flex:1;display:flex;align-items:center;justify-content:center;padding:40px 24px;text-align:center}
-.card{max-width:520px}
-.check{width:72px;height:72px;background:rgba(22,184,178,.15);border:2px solid rgba(22,184,178,.4);border-radius:50%;display:flex;align-items:center;justify-content:center;margin:0 auto 32px;font-size:32px}
-.tag{display:inline-block;background:rgba(22,184,178,.15);border:1px solid rgba(22,184,178,.35);color:#7EE8E5;font-size:11px;font-weight:700;letter-spacing:.12em;padding:5px 18px;border-radius:20px;margin-bottom:24px;text-transform:uppercase}
-h1{font-size:clamp(28px,5vw,44px);font-weight:900;line-height:1.1;letter-spacing:-.04em;margin-bottom:16px}
-h1 em{font-style:normal;color:#16B8B2}
-.sub{font-size:16px;color:rgba(255,255,255,.6);line-height:1.7;margin-bottom:40px;max-width:420px;margin-left:auto;margin-right:auto}
-.what-next{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);border-radius:14px;padding:28px 32px;text-align:left;margin-bottom:36px}
-.what-next-title{font-size:11px;font-weight:700;color:#16B8B2;text-transform:uppercase;letter-spacing:.12em;margin-bottom:20px}
-.step{display:flex;gap:16px;margin-bottom:18px}
+body{font-family:'Sora',sans-serif;background:var(--bg);color:var(--ink);display:flex;flex-direction:column;-webkit-font-smoothing:antialiased;position:relative;overflow-x:hidden}
+body::before{content:'';position:fixed;inset:0;background:radial-gradient(ellipse 70% 60% at 50% 38%,rgba(22,184,178,.1),transparent 64%);pointer-events:none;z-index:-1}
+
+/* NAV */
+nav{position:sticky;top:0;z-index:100;background:rgba(8,14,28,.92);backdrop-filter:blur(14px);border-bottom:1px solid var(--line);padding:0 40px;height:62px;display:flex;align-items:center;justify-content:space-between}
+.nav-logo{font-size:18px;font-weight:800;color:var(--ink);text-decoration:none;letter-spacing:-0.5px}
+.nav-logo span{color:var(--teal)}
+.nav-links{display:flex;gap:22px;align-items:center}
+.nav-links a{color:rgba(255,255,255,.6);text-decoration:none;font-size:13px;font-weight:500;transition:color .2s}
+.nav-links a:hover{color:#fff}
+.nav-cta{background:var(--teal);color:#fff !important;padding:8px 16px;border-radius:7px;font-weight:600 !important;font-size:13px;white-space:nowrap;box-shadow:0 4px 18px -6px rgba(22,184,178,.6)}
+
+.main{flex:1;display:flex;align-items:center;justify-content:center;padding:56px 24px;text-align:center}
+.card{max-width:540px}
+.check{width:76px;height:76px;border-radius:50%;background:radial-gradient(circle at 38% 30%,rgba(120,240,221,.85) 0%,rgba(22,184,178,.5) 36%,rgba(8,28,40,.95) 78%);box-shadow:inset -3px -3px 12px rgba(2,8,18,.85),inset 2px 2px 9px rgba(120,240,221,.35),0 0 40px -8px rgba(22,184,178,.55);display:flex;align-items:center;justify-content:center;margin:0 auto 34px;font-size:32px;color:#fff}
+.tag{display:inline-block;font-size:11px;font-weight:700;letter-spacing:.26em;color:var(--teal);margin-bottom:22px;text-transform:uppercase}
+h1{font-size:clamp(30px,5vw,46px);font-weight:900;line-height:1.08;letter-spacing:-1.8px;margin-bottom:18px}
+h1 em{font-style:normal;color:var(--teal)}
+.sub{font-size:16px;color:rgba(255,255,255,.6);line-height:1.75;margin-bottom:42px;max-width:430px;margin-left:auto;margin-right:auto;font-weight:300}
+.what-next{background:var(--panel);border:1px solid var(--line);border-radius:16px;padding:30px 34px;text-align:left;margin-bottom:38px}
+.what-next-title{font-size:11px;font-weight:700;color:var(--teal);text-transform:uppercase;letter-spacing:.16em;margin-bottom:22px}
+.step{display:flex;gap:16px;margin-bottom:20px}
 .step:last-child{margin-bottom:0}
-.step-num{width:28px;height:28px;border-radius:50%;background:rgba(22,184,178,.2);border:1px solid rgba(22,184,178,.4);display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:700;color:#16B8B2;flex-shrink:0}
-.step-text{font-size:14px;color:rgba(255,255,255,.75);line-height:1.6;padding-top:4px}
+.step-num{width:30px;height:30px;border-radius:50%;background:rgba(22,184,178,.15);border:1px solid rgba(22,184,178,.4);display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:700;color:var(--teal);flex-shrink:0}
+.step-text{font-size:14px;color:rgba(255,255,255,.7);line-height:1.6;padding-top:5px;font-weight:300}
 .step-text strong{color:#fff;font-weight:600}
-.btn{display:inline-block;padding:13px 32px;background:#16B8B2;color:#fff;border-radius:10px;font-size:15px;font-weight:700;text-decoration:none;transition:opacity .15s}
-.btn:hover{opacity:.88}
-footer{padding:24px 40px;text-align:center;font-size:12px;color:rgba(255,255,255,.3)}
+.btn{display:inline-block;padding:14px 34px;background:var(--teal);color:#fff;border-radius:10px;font-size:15px;font-weight:700;text-decoration:none;box-shadow:0 8px 30px -8px rgba(22,184,178,.7);transition:transform .2s,box-shadow .2s}
+.btn:hover{transform:translateY(-2px);box-shadow:0 14px 38px -8px rgba(22,184,178,.85)}
+footer{padding:26px 40px;text-align:center;font-size:13px;color:rgba(255,255,255,.3);border-top:1px solid var(--line)}
 footer a{color:rgba(255,255,255,.4);text-decoration:none}
-@media(max-width:600px){.nav{padding:16px 20px}.what-next{padding:22px 20px}}
+footer a:hover{color:var(--teal)}
+@media(max-width:600px){nav{padding:0 20px}.nav-links{gap:14px}.nav-links a{font-size:12px}.nav-cta{padding:7px 12px;font-size:12px}.what-next{padding:24px 22px}}
 </style>
 </head>
 <body>
-<nav class="nav">
-  <a href="sample.html" class="logo">blue<span>shift</span></a>
+<nav>
+  <a href="sample.html" class="nav-logo">blue<span>shift</span></a>
+  <div class="nav-links">
+    <a href="about.html">Who</a>
+    <a href="why.html">Why Us</a>
+    <a href="brief.html" class="nav-cta">Get Your Report →</a>
+  </div>
 </nav>
 <main class="main">
   <div class="card">
@@ -62,7 +82,7 @@ footer a{color:rgba(255,255,255,.4);text-decoration:none}
   </div>
 </main>
 <footer>
-  &#169; 2026 Blueshift Inc. &nbsp;&middot;&nbsp; <a href="about.html">About</a> &nbsp;&middot;&nbsp; <a href="mailto:ceo@blueshift-inc.jp">ceo@blueshift-inc.jp</a>
+  &#169; 2026 Blueshift Inc. &nbsp;&middot;&nbsp; <a href="about.html">Who</a> &nbsp;&middot;&nbsp; <a href="why.html">Why Us</a> &nbsp;&middot;&nbsp; <a href="mailto:ceo@blueshift-inc.jp">ceo@blueshift-inc.jp</a>
 </footer>
 </body>
 </html>

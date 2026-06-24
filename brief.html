@@ -5,68 +5,92 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="description" content="Start your Japan market entry brief. Tell us about your company and we'll respond with a proposal within 24 hours.">
 <title>Start Your Brief — Blueshift Inc.</title>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
 <style>
+:root{
+  --navy:#060C1A;--teal:#16B8B2;--teal-lt:#7DF0E0;--ink:#F4F6F8;--muted:#8A96AA;
+  --surface:#0D1829;--panel:#0F1E35;--bg:#080E1C;--line:rgba(255,255,255,.07);--line2:rgba(255,255,255,.12);
+}
 *{box-sizing:border-box;margin:0;padding:0}
 html{scroll-behavior:smooth}
-body{font-family:'Inter',sans-serif;color:#1a2236;background:#f7f9fc;line-height:1.6;-webkit-font-smoothing:antialiased}
-.nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(13,27,62,.97);backdrop-filter:blur(10px);padding:14px 40px;display:flex;align-items:center;justify-content:space-between}
-.logo{font-size:17px;font-weight:800;color:#fff;letter-spacing:-.03em;text-decoration:none}
-.logo span{color:#16B8B2}
-.nav-right{display:flex;align-items:center;gap:24px}
-.nav-about,.nav-back{font-size:13px;font-weight:500;color:rgba(255,255,255,.65);text-decoration:none;transition:color .15s}
-.nav-about:hover,.nav-back:hover{color:#fff}
-.hero{background:linear-gradient(150deg,#0d1b3e 0%,#13295a 60%,#0e3a3a 100%);color:#fff;padding:120px 40px 60px;text-align:center}
-.hero-label{display:inline-block;background:rgba(22,184,178,.15);border:1px solid rgba(22,184,178,.35);color:#7EE8E5;font-size:11px;font-weight:700;letter-spacing:.12em;padding:5px 18px;border-radius:20px;margin-bottom:20px;text-transform:uppercase}
-.hero h1{font-size:clamp(24px,4vw,40px);font-weight:900;line-height:1.15;letter-spacing:-.03em;margin-bottom:12px}
-.hero h1 em{font-style:normal;color:#16B8B2}
-.hero-sub{font-size:15px;color:rgba(255,255,255,.6);max-width:420px;margin:0 auto}
-.form-outer{max-width:680px;margin:0 auto;padding:48px 24px 80px}
-.form-card{background:#fff;border-radius:16px;padding:40px;box-shadow:0 4px 32px rgba(13,27,62,.08);border:1px solid #e8eff7}
-.form-intro{margin-bottom:32px;padding-bottom:28px;border-bottom:1px solid #f0f4f8}
-.form-intro p{font-size:14px;color:#5a6a82;line-height:1.7}
-.form-intro strong{color:#0d1b3e}
-.field{margin-bottom:24px}
-.field label{display:block;font-size:13px;font-weight:600;color:#0d1b3e;margin-bottom:7px}
-.field label .req{color:#16B8B2;margin-left:2px}
-.field input,.field textarea,.field select{width:100%;padding:11px 14px;border:1.5px solid #dde5f0;border-radius:8px;font-size:14px;font-family:'Inter',sans-serif;color:#1a2236;background:#fff;transition:border-color .15s,box-shadow .15s;outline:none;appearance:none;-webkit-appearance:none}
-.field input:focus,.field textarea:focus,.field select:focus{border-color:#16B8B2;box-shadow:0 0 0 3px rgba(22,184,178,.12)}
-.field textarea{resize:vertical;min-height:100px}
-.field .hint{font-size:12px;color:#8a9ab2;margin-top:5px}
+body{font-family:'Sora',sans-serif;color:var(--ink);background:var(--bg);line-height:1.6;-webkit-font-smoothing:antialiased;position:relative;overflow-x:hidden}
+body::before{content:'';position:fixed;top:0;left:0;right:0;height:100vh;background:radial-gradient(ellipse 72% 58% at 50% -4%,rgba(22,184,178,.08),transparent 62%);pointer-events:none;z-index:-1}
+
+/* NAV */
+nav{position:sticky;top:0;z-index:100;background:rgba(8,14,28,.92);backdrop-filter:blur(14px);border-bottom:1px solid var(--line);padding:0 40px;height:62px;display:flex;align-items:center;justify-content:space-between}
+.nav-logo{font-size:18px;font-weight:800;color:var(--ink);text-decoration:none;letter-spacing:-0.5px}
+.nav-logo span{color:var(--teal)}
+.nav-links{display:flex;gap:22px;align-items:center}
+.nav-links a{color:rgba(255,255,255,.6);text-decoration:none;font-size:13px;font-weight:500;transition:color .2s}
+.nav-links a:hover{color:#fff}
+.nav-cta{background:var(--teal);color:#fff !important;padding:8px 16px;border-radius:7px;font-weight:600 !important;font-size:13px;white-space:nowrap;box-shadow:0 4px 18px -6px rgba(22,184,178,.6);transition:transform .2s,box-shadow .2s}
+.nav-cta:hover{transform:translateY(-1px);box-shadow:0 8px 24px -6px rgba(22,184,178,.7)}
+
+/* HERO */
+.hero{padding:96px 40px 64px;text-align:center}
+.hero-label{display:inline-block;font-size:11px;font-weight:700;letter-spacing:.32em;color:var(--teal);margin-bottom:22px;text-transform:uppercase}
+.hero h1{font-size:clamp(28px,5vw,46px);font-weight:900;line-height:1.1;letter-spacing:-1.5px;margin-bottom:14px}
+.hero h1 em{font-style:normal;color:var(--teal)}
+.hero-sub{font-size:16px;color:rgba(255,255,255,.6);max-width:440px;margin:0 auto;font-weight:300}
+
+/* FORM */
+.form-outer{max-width:700px;margin:0 auto;padding:8px 24px 80px}
+.form-card{background:var(--panel);border-radius:18px;padding:44px;box-shadow:0 24px 60px -24px rgba(0,0,0,.6);border:1px solid var(--line)}
+.form-intro{margin-bottom:34px;padding-bottom:30px;border-bottom:1px solid var(--line)}
+.form-intro p{font-size:14.5px;color:rgba(255,255,255,.62);line-height:1.75;font-weight:300}
+.form-intro strong{color:var(--ink);font-weight:600}
+.field{margin-bottom:26px}
+.field label{display:block;font-size:13px;font-weight:600;color:var(--ink);margin-bottom:9px}
+.field label .req{color:var(--teal);margin-left:2px}
+.field input,.field textarea,.field select{width:100%;padding:12px 15px;border:1.5px solid var(--line2);border-radius:9px;font-size:14px;font-family:'Sora',sans-serif;color:var(--ink);background:rgba(255,255,255,.04);transition:border-color .15s,box-shadow .15s,background .15s;outline:none;appearance:none;-webkit-appearance:none}
+.field input::placeholder,.field textarea::placeholder{color:rgba(255,255,255,.32)}
+.field input:focus,.field textarea:focus,.field select:focus{border-color:var(--teal);background:rgba(22,184,178,.05);box-shadow:0 0 0 3px rgba(22,184,178,.14)}
+.field select option{background:var(--surface);color:var(--ink)}
+.field textarea{resize:vertical;min-height:104px;line-height:1.6}
+.field .hint{font-size:12px;color:var(--muted);margin-top:6px}
 .field-row{display:grid;grid-template-columns:1fr 1fr;gap:16px}
 .plan-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:4px}
 .plan-option{position:relative}
 .plan-option input[type="radio"]{position:absolute;opacity:0;width:0;height:0}
-.plan-label{display:block;padding:14px 16px;border:1.5px solid #dde5f0;border-radius:10px;cursor:pointer;transition:border-color .15s,background .15s}
-.plan-label:hover{border-color:#16B8B2;background:#f4fbfb}
-.plan-option input:checked + .plan-label{border-color:#16B8B2;background:#f0fafa;box-shadow:0 0 0 3px rgba(22,184,178,.1)}
-.plan-name{font-size:13px;font-weight:700;color:#0d1b3e}
-.plan-price{font-size:12px;color:#16B8B2;font-weight:600;margin-top:2px}
-.plan-desc{font-size:11px;color:#8a9ab2;margin-top:3px}
-.plan-badge{display:inline-block;font-size:9px;font-weight:700;background:#16B8B2;color:#fff;padding:2px 6px;border-radius:4px;margin-left:6px;text-transform:uppercase}
-.divider{border:none;border-top:1px solid #f0f4f8;margin:28px 0}
-.submit-btn{width:100%;padding:15px;background:linear-gradient(90deg,#0d1b3e,#16B8B2);color:#fff;border:none;border-radius:10px;font-size:16px;font-weight:700;font-family:'Inter',sans-serif;cursor:pointer;transition:opacity .15s}
-.submit-btn:hover{opacity:.9}
-.submit-note{text-align:center;font-size:12px;color:#8a9ab2;margin-top:12px}
-.submit-note a{color:#16B8B2;text-decoration:none}
-.trust-bar{max-width:680px;margin:0 auto 60px;padding:0 24px;display:flex;gap:24px;justify-content:center;flex-wrap:wrap}
-.trust-item{font-size:13px;color:#5a6a82;display:flex;align-items:center;gap:7px}
-.trust-item::before{content:'✓';color:#16B8B2;font-weight:700}
+.plan-label{display:block;padding:15px 16px;border:1.5px solid var(--line2);border-radius:11px;cursor:pointer;transition:border-color .15s,background .15s;background:rgba(255,255,255,.02)}
+.plan-label:hover{border-color:rgba(22,184,178,.5);background:rgba(22,184,178,.05)}
+.plan-option input:checked + .plan-label{border-color:var(--teal);background:rgba(22,184,178,.1);box-shadow:0 0 0 3px rgba(22,184,178,.12)}
+.plan-name{font-size:13px;font-weight:700;color:var(--ink)}
+.plan-price{font-size:12px;color:var(--teal);font-weight:600;margin-top:3px}
+.plan-desc{font-size:11px;color:var(--muted);margin-top:4px}
+.plan-badge{display:inline-block;font-size:9px;font-weight:700;background:var(--teal);color:#fff;padding:2px 6px;border-radius:4px;margin-left:6px;text-transform:uppercase}
+.divider{border:none;border-top:1px solid var(--line);margin:30px 0}
+.submit-btn{width:100%;padding:16px;background:var(--teal);color:#fff;border:none;border-radius:11px;font-size:16px;font-weight:700;font-family:'Sora',sans-serif;cursor:pointer;box-shadow:0 8px 30px -8px rgba(22,184,178,.7);transition:transform .2s,box-shadow .2s}
+.submit-btn:hover{transform:translateY(-2px);box-shadow:0 14px 38px -8px rgba(22,184,178,.85)}
+.submit-note{text-align:center;font-size:12px;color:var(--muted);margin-top:14px}
+.submit-note a{color:var(--teal);text-decoration:none}
+.trust-bar{max-width:700px;margin:36px auto 0;padding:0 24px;display:flex;gap:26px;justify-content:center;flex-wrap:wrap}
+.trust-item{font-size:13px;color:rgba(255,255,255,.6);display:flex;align-items:center;gap:8px}
+.trust-item::before{content:'✓';color:var(--teal);font-weight:700}
+footer{padding:28px 40px;text-align:center;font-size:13px;color:rgba(255,255,255,.3);border-top:1px solid var(--line);margin-top:60px}
+footer a{color:rgba(255,255,255,.4);text-decoration:none}
+footer a:hover{color:var(--teal)}
 @media(max-width:600px){
-  .nav{padding:12px 20px}
-  .hero{padding:100px 24px 48px}
-  .form-outer{padding:32px 16px 60px}
+  nav{padding:0 20px}
+  .nav-links{gap:14px}
+  .nav-links a{font-size:12px}
+  .nav-cta{padding:7px 12px;font-size:12px}
+  .hero{padding:72px 22px 48px}
+  .form-outer{padding:8px 16px 60px}
   .form-card{padding:28px 20px}
   .field-row{grid-template-columns:1fr}
 }
 </style>
 </head>
 <body>
-<nav class="nav">
-  <a href="sample.html" class="logo">blue<span>shift</span></a>
-  <div class="nav-right">
-    <a href="about.html" class="nav-about">Who</a>
-    <a href="sample.html" class="nav-back">← Services</a>
+<nav>
+  <a href="sample.html" class="nav-logo">blue<span>shift</span></a>
+  <div class="nav-links">
+    <a href="about.html">Who</a>
+    <a href="why.html">Why Us</a>
+    <a href="brief.html" class="nav-cta">Get Your Report →</a>
   </div>
 </nav>
 <section class="hero">
@@ -189,5 +213,8 @@ body{font-family:'Inter',sans-serif;color:#1a2236;background:#f7f9fc;line-height
     <div class="trust-item">20 years Japan experience</div>
   </div>
 </div>
+<footer>
+  &copy; 2026 Blueshift Inc. &nbsp;&middot;&nbsp; <a href="sample.html">Services</a> &nbsp;&middot;&nbsp; <a href="why.html">Why Us</a> &nbsp;&middot;&nbsp; <a href="mailto:ceo@blueshift-inc.jp">ceo@blueshift-inc.jp</a>
+</footer>
 </body>
 </html>
