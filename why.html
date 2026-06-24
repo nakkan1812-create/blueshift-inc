@@ -143,10 +143,27 @@ nav{position:sticky;top:0;z-index:100;background:rgba(8,14,28,.96);backdrop-filt
 
 footer{padding:24px 40px;text-align:center;font-size:13px;color:rgba(255,255,255,.3);border-top:1px solid var(--line)}
 
+/* FOUNDER CARD */
+.founder-card{display:grid;grid-template-columns:220px 1fr;gap:0;align-items:start;margin:40px 0 48px;background:var(--panel);border:1px solid var(--line);border-radius:16px;overflow:hidden}
+.founder-photo-wrap{position:relative;flex-shrink:0}
+.founder-photo{width:220px;height:300px;object-fit:cover;object-position:center top;display:block}
+.founder-photo-overlay{position:absolute;bottom:0;left:0;right:0;height:80px;background:linear-gradient(transparent,var(--panel))}
+.founder-info{padding:32px 36px}
+.founder-name{font-size:26px;font-weight:800;letter-spacing:-0.8px;margin-bottom:4px}
+.founder-role{font-size:13px;color:var(--teal);font-weight:600;letter-spacing:.04em;margin-bottom:24px}
+.founder-stats{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-bottom:24px;padding-bottom:24px;border-bottom:1px solid var(--line)}
+.founder-stat{text-align:center;background:rgba(22,184,178,.05);border:1px solid rgba(22,184,178,.1);border-radius:10px;padding:14px 8px}
+.founder-stat-num{font-size:22px;font-weight:900;color:var(--teal);letter-spacing:-0.5px;line-height:1}
+.founder-stat-lbl{font-size:11px;color:var(--muted);margin-top:5px;line-height:1.35}
+.founder-quote{font-size:14px;color:rgba(255,255,255,.6);line-height:1.8;font-style:italic}
+
 /* SECTION DIVIDER */
 .section-divider{border:none;border-top:1px solid var(--line);max-width:960px;margin:0 auto}
 
 @media(max-width:700px){
+  .founder-card{grid-template-columns:1fr}
+  .founder-photo{width:100%;height:240px}
+  .founder-info{padding:24px}
   .stat-grid{grid-template-columns:1fr 1fr}
   .nakkan-grid{grid-template-columns:1fr}
   .highlight-row{grid-template-columns:1fr 1fr}
@@ -166,7 +183,7 @@ footer{padding:24px 40px;text-align:center;font-size:13px;color:rgba(255,255,255
 <nav>
   <a href="sample.html" class="nav-logo">blue<span>shift</span></a>
   <div class="nav-links">
-    <a href="about.html">About</a>
+    <a href="about.html">Who</a>
     <a href="why.html" style="color:#fff;font-weight:600">Why Us</a>
     <a href="brief.html" class="nav-cta">Get Your Report →</a>
   </div>
@@ -263,6 +280,10 @@ footer{padding:24px 40px;text-align:center;font-size:13px;color:rgba(255,255,255
     <div class="chart-wrap-title">Japan Market Attractiveness — Key Dimensions (Score out of 100)</div>
     <div style="max-height:320px;position:relative"><canvas id="chartAttractiveness"></canvas></div>
     <div class="chart-note">Japan scores exceptionally on talent quality, IP protection, legal stability, and market size. Procurement accessibility — the cultural and relational barrier to vendor selection — is the outlier. That's exactly what local expertise addresses.</div>
+  </div>
+
+  <div class="pull-quote" style="margin-top:32px">
+    <p>The data above uses enterprise software as the primary lens — but the structural gap is sector-agnostic. Manufacturing, healthcare, energy, financial services, logistics: every industry entering Japan faces the same procurement barrier. The numbers differ; the underlying dynamic does not.</p>
   </div>
 </section>
 
@@ -369,6 +390,33 @@ footer{padding:24px 40px;text-align:center;font-size:13px;color:rgba(255,255,255
   <div class="section-label">04 — Why Us</div>
   <h2 class="section-title">20 years inside the machine<br>that runs Japan.</h2>
   <p class="section-sub">Blueshift was founded by Tomoaki Nakao — a former Business Development Manager at Sumitomo Corporation, one of Japan's five major sogo shosha (general trading companies). This is not a typical consulting credential.</p>
+
+  <!-- Founder Card -->
+  <div class="founder-card">
+    <div class="founder-photo-wrap">
+      <img src="nakkan.png" class="founder-photo" alt="Tomoaki Nakao">
+      <div class="founder-photo-overlay"></div>
+    </div>
+    <div class="founder-info">
+      <div class="founder-name">Tomoaki Nakao</div>
+      <div class="founder-role">Founder &amp; CEO · Blueshift Inc.</div>
+      <div class="founder-stats">
+        <div class="founder-stat">
+          <div class="founder-stat-num">20+</div>
+          <div class="founder-stat-lbl">Years at Sumitomo Corporation</div>
+        </div>
+        <div class="founder-stat">
+          <div class="founder-stat-num">$800B</div>
+          <div class="founder-stat-lbl">Sogo shosha revenue ecosystem</div>
+        </div>
+        <div class="founder-stat">
+          <div class="founder-stat-num">5</div>
+          <div class="founder-stat-lbl">Major trading house network</div>
+        </div>
+      </div>
+      <p class="founder-quote">"I spent two decades watching foreign companies enter Japan. The ones that succeeded didn't just learn the language — they learned how decisions are made, who actually holds the key, and why patience is leverage, not weakness."</p>
+    </div>
+  </div>
 
   <!-- Sogo Shosha explainer -->
   <div class="comparison-block" style="margin-bottom:40px">
