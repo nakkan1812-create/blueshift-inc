@@ -5,18 +5,21 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Sample Report — Japan Market Intelligence | Blueshift Inc.</title>
 <meta name="description" content="See what a Blueshift Japan market entry report looks like. Institutional-quality research delivered in 3–5 days.">
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
 <style>
 :root{--navy:#060C1A;--teal:#16B8B2;--teal-lt:#D9F4F3;--blue:#1E5EDB;--ink:#F4F6F8;--muted:#8A96AA;--line:rgba(255,255,255,.08);--surface:#0D1829;--bg:#080E1C}
 *{box-sizing:border-box;margin:0;padding:0}
 html{scroll-behavior:smooth}
-body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--ink);-webkit-font-smoothing:antialiased}
+body{font-family:'Sora',sans-serif;background:var(--bg);color:var(--ink);-webkit-font-smoothing:antialiased}
 
 /* NAV */
-nav{background:var(--navy);padding:0 40px;display:flex;align-items:center;justify-content:space-between;height:60px;position:sticky;top:0;z-index:100}
-.nav-logo{color:#fff;font-size:16px;font-weight:800;letter-spacing:-.02em;text-decoration:none}
+nav{position:sticky;top:0;z-index:100;background:rgba(8,14,28,.96);backdrop-filter:blur(12px);border-bottom:1px solid var(--line);padding:0 40px;height:60px;display:flex;align-items:center;justify-content:space-between}
+.nav-logo{font-size:18px;font-weight:800;color:var(--ink);text-decoration:none;letter-spacing:-0.5px}
 .nav-logo span{color:var(--teal)}
-.nav-cta{background:var(--teal);color:#fff;font-size:13px;font-weight:700;padding:8px 20px;border-radius:6px;text-decoration:none}
+.nav-links{display:flex;gap:20px;align-items:center}
+.nav-links a{color:rgba(255,255,255,.6);text-decoration:none;font-size:13px;font-weight:500;transition:color .2s}
+.nav-links a:hover{color:#fff}
+.nav-cta{background:var(--teal);color:#fff !important;padding:8px 16px;border-radius:6px;font-weight:600 !important;font-size:13px;white-space:nowrap}
 
 /* HERO */
 .hero{background:linear-gradient(160deg,#060C1A 0%,#091A2F 55%,#0A2235 100%);color:#fff;padding:80px 40px 72px;text-align:center}
@@ -113,6 +116,7 @@ footer a{color:var(--teal);text-decoration:none}
   .hero{padding:52px 20px}
   .hero h1{font-size:30px}
   nav{padding:0 20px}
+  .nav-links{gap:14px}
   .wrap{padding:0 20px}
   .inside-grid,.pricing-grid{grid-template-columns:1fr}
   .process-grid{grid-template-columns:1fr 1fr}
@@ -127,10 +131,12 @@ footer a{color:var(--teal);text-decoration:none}
 <body>
 
 <nav>
-  <a href="/" class="nav-logo">blue<span>shift</span></a>
-  <a href="about.html" style="color:rgba(255,255,255,.7);font-size:13px;font-weight:500;text-decoration:none;margin-right:8px;">Who</a>
-    <a href="why.html" style="color:rgba(255,255,255,.7);font-size:13px;font-weight:500;text-decoration:none">Why Us</a>
-  <a href="brief.html" class="nav-cta">Get Your Report →</a>
+  <a href="sample.html" class="nav-logo">blue<span>shift</span></a>
+  <div class="nav-links">
+    <a href="about.html">Who</a>
+    <a href="why.html">Why Us</a>
+    <a href="brief.html" class="nav-cta">Get Your Report →</a>
+  </div>
 </nav>
 
 <div class="hero">
@@ -138,7 +144,8 @@ footer a{color:var(--teal);text-decoration:none}
   <h1>What a Blueshift<br><em>Japan Market Report</em><br>looks like</h1>
   <p>Institutional-quality Japan market intelligence. Delivered in 3–5 business days. Not months.</p>
   <div class="hero-actions">
-    <a href="#report" class="btn-primary">View Sample <a href="brief.html" class="btn-ghost">Start Your Brief →</a>Custom Report</a>
+    <a href="#report" class="btn-primary">View Sample Report</a>
+    <a href="brief.html" class="btn-ghost">Custom Report →</a>
   </div>
 </div>
 
@@ -256,7 +263,7 @@ footer a{color:var(--teal);text-decoration:none}
           <li>20–25 page report</li>
           <li>Delivered in 3 business days</li>
         </ul>
-        <a href="mailto:ceo@blueshift-inc.jp?brief.html" class="price-btn">Request Starter Report</a>
+        <a href="mailto:ceo@blueshift-inc.jp?subject=Report%20Request" class="price-btn">Request Starter Report</a>
       </div>
 
       <div class="price-card featured">
@@ -274,7 +281,7 @@ footer a{color:var(--teal);text-decoration:none}
           <li>Delivered in 5 business days</li>
           <li>Email Q&amp;A included</li>
         </ul>
-        <a href="mailto:ceo@blueshift-inc.jp?brief.html" class="price-btn">Request Standard Report</a>
+        <a href="mailto:ceo@blueshift-inc.jp?subject=Report%20Request" class="price-btn">Request Standard Report</a>
       </div>
 
       <div class="price-card">
@@ -290,7 +297,7 @@ footer a{color:var(--teal);text-decoration:none}
           <li>Board-ready presentation deck</li>
           <li>M&amp;A / investment target list</li>
         </ul>
-        <a href="mailto:ceo@blueshift-inc.jp?brief.html" class="price-btn">Request Premium Report</a>
+        <a href="mailto:ceo@blueshift-inc.jp?subject=Report%20Request" class="price-btn">Request Premium Report</a>
       </div>
     </div>
   </div>
