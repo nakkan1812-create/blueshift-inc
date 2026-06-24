@@ -506,7 +506,7 @@ Chart.defaults.color = '#8A96AA';
 new Chart(document.getElementById('chartAttractiveness'), {
   type: 'radar',
   data: {
-    labels: ['Market Size', 'Talent Quality', 'IP Protection', 'ESG Momentum', 'Digital Gap\n(Opportunity)', 'Legal Stability', 'Procurement\nAccessibility'],
+    labels: ['Market\nSize', 'Talent\nQuality', 'IP\nProtection', 'ESG\nMomentum', 'Digital Gap\n(Opportunity)', 'Legal\nStability', 'Procurement\nAccessibility'],
     datasets: [
       {
         label: 'Japan',
@@ -532,7 +532,7 @@ new Chart(document.getElementById('chartAttractiveness'), {
   options: {
     responsive: true,
     maintainAspectRatio: false,
-    layout: { padding: { top: 10, right: 60, bottom: 10, left: 60 } },
+    layout: { padding: { top: 10, right: 20, bottom: 10, left: 20 } },
     plugins: {
       legend: { position: 'top', labels: { boxWidth: 14, padding: 24 } },
       tooltip: { callbacks: { label: c => ' ' + c.dataset.label + ': ' + c.raw + ' / 100' } }
@@ -556,7 +556,7 @@ new Chart(document.getElementById('chartShift'), {
     labels: ['2015','2016','2017','2018','2019','2020','2021','2022','2023','2024','2025F','2026F','2027F','2028F'],
     datasets: [
       {
-        label: 'Legacy IT Spend (on-prem / hardware)',
+        label: 'Legacy IT (on-prem)',
         data: [72,70,68,65,61,56,50,43,36,30,24,19,15,12],
         borderColor: 'rgba(220,38,38,0.6)',
         backgroundColor: 'rgba(220,38,38,0.05)',
@@ -566,7 +566,7 @@ new Chart(document.getElementById('chartShift'), {
         tension: 0.4
       },
       {
-        label: 'Cloud & SaaS Spend',
+        label: 'Cloud & SaaS',
         data: [8,11,14,18,23,28,36,45,54,62,70,76,81,86],
         borderColor: '#16B8B2',
         backgroundColor: 'rgba(22,184,178,0.07)',
@@ -580,7 +580,7 @@ new Chart(document.getElementById('chartShift'), {
   options: {
     responsive: true,
     maintainAspectRatio: false,
-    layout: { padding: { top: 10, right: 60, bottom: 10, left: 60 } },
+    layout: { padding: { top: 10, right: 20, bottom: 10, left: 20 } },
     plugins: {
       legend: { position: 'top', labels: { boxWidth: 14, padding: 20 } },
       tooltip: { callbacks: { label: c => ' ' + c.dataset.label + ': ' + c.parsed.y + '%' } },
@@ -608,7 +608,7 @@ new Chart(document.getElementById('chartBoundaries'), {
       'Circular\nEconomy',
       'Urban\nEfficiency',
       'Ocean\nHealth',
-      'Air Quality',
+      'Air\nQuality',
       'Land Use\nEfficiency',
       'Freshwater\nManagement'
     ],
@@ -637,7 +637,7 @@ new Chart(document.getElementById('chartBoundaries'), {
   options: {
     responsive: true,
     maintainAspectRatio: false,
-    layout: { padding: { top: 10, right: 60, bottom: 10, left: 60 } },
+    layout: { padding: { top: 10, right: 20, bottom: 10, left: 20 } },
     plugins: {
       legend: { position: 'top', labels: { boxWidth: 14, padding: 24 } },
       tooltip: { callbacks: { label: c => ' ' + c.dataset.label + ': ' + c.raw + ' / 100' } }
