@@ -124,14 +124,38 @@ footer a{color:var(--teal);text-decoration:none}
   nav{padding:0 20px}
   .nav-links{gap:14px}
   .wrap{padding:0 20px}
-  .inside-grid,.pricing-grid{grid-template-columns:1fr}
+  .inside-grid,.pricing-grid,.ai-cols{grid-template-columns:1fr}
   .process-grid{grid-template-columns:1fr 1fr}
   .about-inner{grid-template-columns:1fr}
   .proof-bar{gap:24px;padding:16px 20px}
   .report-frame-wrap iframe{height:420px}
   .final-cta{padding:52px 20px}
   .final-cta h2{font-size:26px}
+  .founding-box{padding:28px 20px}
+  .founding-box h3{font-size:21px}
 }
+
+/* WHY WE'RE FAST (AI + HUMAN) */
+.speed-split{max-width:680px;margin:8px auto 40px}
+.speed-bar{display:flex;height:46px;border-radius:10px;overflow:hidden;border:1px solid var(--line)}
+.speed-fill-ai{flex:0 0 80%;background:rgba(22,184,178,.16);color:var(--teal);display:flex;align-items:center;justify-content:center;font-weight:800;font-size:15px}
+.speed-fill-human{flex:1;background:var(--teal);color:#fff;display:flex;align-items:center;justify-content:center;font-weight:800;font-size:15px;white-space:nowrap}
+.speed-legend{display:flex;gap:26px;justify-content:center;margin-top:12px;font-size:12.5px;color:var(--muted)}
+.speed-legend i{display:inline-block;width:10px;height:10px;border-radius:50%;margin-right:6px;vertical-align:middle}
+.dot-ai{background:rgba(22,184,178,.4)}
+.dot-human{background:var(--teal)}
+.ai-cols{display:grid;grid-template-columns:1fr 1fr;gap:20px;margin-top:8px}
+.ai-col{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:28px}
+.ai-col.featured{border-color:var(--teal)}
+.ai-col-tag{font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:var(--teal);margin-bottom:8px}
+.ai-col h3{font-size:18px;font-weight:800;margin-bottom:10px}
+.ai-col p{font-size:14px;color:var(--muted);line-height:1.7}
+
+/* FOUNDING CLIENTS */
+.founding-box{margin-top:40px;background:linear-gradient(160deg,#0A1B30,#0C2A3C);border:1px solid rgba(22,184,178,.3);border-radius:16px;padding:40px;text-align:center}
+.founding-tag{display:inline-block;font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.1em;color:var(--teal);background:rgba(22,184,178,.12);border:1px solid rgba(22,184,178,.3);padding:5px 14px;border-radius:20px;margin-bottom:16px}
+.founding-box h3{font-size:26px;font-weight:900;margin-bottom:12px}
+.founding-box p{font-size:15px;color:rgba(255,255,255,.7);max-width:620px;margin:0 auto 24px;line-height:1.7}
 </style>
 </head>
 <body>
@@ -249,6 +273,40 @@ footer a{color:var(--teal);text-decoration:none}
   </div>
 </div>
 
+<!-- WHY WE'RE FAST (AI + HUMAN) -->
+<div class="section" style="padding-top:0">
+  <div class="wrap">
+    <div class="section-label">How we're fast</div>
+    <h2>Institutional depth,<br>without the institutional timeline</h2>
+    <p class="lead">A 40–60 page report in days, not months, raises a fair question: is this just AI output? No. We use AI to compress the slow part — and spend the time we save on the part that actually decides whether you win in Japan.</p>
+
+    <div class="speed-split">
+      <div class="speed-bar">
+        <div class="speed-fill-ai">~80% machine</div>
+        <div class="speed-fill-human">~20% human</div>
+      </div>
+      <div class="speed-legend">
+        <span><i class="dot-ai"></i> AI-accelerated research</span>
+        <span><i class="dot-human"></i> Sogo shosha judgment</span>
+      </div>
+    </div>
+
+    <div class="ai-cols">
+      <div class="ai-col">
+        <div class="ai-col-tag">The machine does the heavy lifting</div>
+        <h3>~80% — Data collection &amp; modeling</h3>
+        <p>AI-driven research sweeps hundreds of Japanese and English sources — company filings, industry data, competitor sites, regulatory notices — and assembles the market model. This is the work that used to take analysts weeks. We compress it into days.</p>
+      </div>
+      <div class="ai-col featured">
+        <div class="ai-col-tag">A 20-year trader does the thinking</div>
+        <h3>~20% — Judgment &amp; insight</h3>
+        <p>Every conclusion is written by a human who spent two decades inside a sogo shosha: who really holds budget, which partners to approach, why deals die in committee, and what the data can't show. AI never writes your recommendations — it just buys us the time to get them right.</p>
+      </div>
+    </div>
+    <p style="text-align:center;margin-top:22px;font-size:14px;color:var(--muted)">The result: the depth of a traditional engagement, delivered in 5–15 business days — at roughly one-tenth the cost.</p>
+  </div>
+</div>
+
 <!-- CONFIDENTIALITY -->
 <div class="section">
   <div class="wrap">
@@ -327,7 +385,7 @@ footer a{color:var(--teal);text-decoration:none}
       <div>
         <div class="about-avatar">TN</div>
         <div class="about-name">Tomoaki Nakao</div>
-        <div class="about-title">Founder & CEO, Blueshift Japan LLC<br>Business Development Manager, Sumitomo Corporation</div>
+        <div class="about-title">Founder & CEO, Blueshift Japan LLC</div>
         <div class="about-badges">
           <div class="about-badge"><strong>Experience</strong>20 years, Sumitomo Corporation</div>
           <div class="about-badge"><strong>Expertise</strong>Trade, Investment, Business Development</div>
@@ -339,6 +397,55 @@ footer a{color:var(--teal);text-decoration:none}
         <p>That career taught me something that no consulting firm can replicate: how decisions actually get made in Japan. Not the official process — the real one. Who controls budget. Which relationships open doors. Why certain deals die in committee even when the numbers work.</p>
         <p>I founded Blueshift Japan LLC to make that knowledge available to global companies in a format that's fast, affordable, and actionable — without the overhead of a traditional consulting engagement.</p>
       </div>
+    </div>
+  </div>
+</div>
+
+<!-- WHY TRUST US / FOUNDING CLIENTS -->
+<div class="section">
+  <div class="wrap">
+    <div class="section-label">Why trust us</div>
+    <h2>We're new. Our<br>judgment isn't.</h2>
+    <p class="lead">Blueshift Japan is a young firm, so we won't pretend to have a wall of client logos. Instead, we earn your confidence the honest way — show you the work before you commit, and stand behind it.</p>
+
+    <div class="inside-grid">
+      <div class="inside-card">
+        <div class="inside-icon">📄</div>
+        <h3>See the work first</h3>
+        <p>We don't ask you to imagine the output. A full sample report is live on this page — <a href="#report" style="color:var(--teal);text-decoration:none">read it</a> before you decide anything.</p>
+      </div>
+      <div class="inside-card">
+        <div class="inside-icon">🎓</div>
+        <h3>A track record you can verify</h3>
+        <p>20 years at Sumitomo Corporation, one of Japan's five sogo shosha — commodity trade, cross-border investment, and business development. Verifiable, not a claim.</p>
+      </div>
+      <div class="inside-card">
+        <div class="inside-icon">💴</div>
+        <h3>Transparent, fixed pricing</h3>
+        <p>Published prices, one-time fees, no retainers or lock-in. You know exactly what it costs before you say yes — and what's in scope.</p>
+      </div>
+      <div class="inside-card">
+        <div class="inside-icon">🔒</div>
+        <h3>Confidential &amp; independent</h3>
+        <p>NDA on request, kept fully separate from any other engagement, never shared with third parties, and never used to train AI models.</p>
+      </div>
+      <div class="inside-card">
+        <div class="inside-icon">🙋</div>
+        <h3>The founder does your report</h3>
+        <p>No junior analysts. The person with the 20 years of context writes your report personally — and answers your follow-up questions directly.</p>
+      </div>
+      <div class="inside-card">
+        <div class="inside-icon">🎯</div>
+        <h3>Built to be decided on</h3>
+        <p>The goal isn't a thick deck — it's a clear go / no-go answer. If the report doesn't give you that, tell us and we'll revise it.</p>
+      </div>
+    </div>
+
+    <div class="founding-box">
+      <div class="founding-tag">Founding clients · limited</div>
+      <h3>Be one of our first case studies</h3>
+      <p>We're taking on a small number of founding clients at a reduced rate. In exchange, you give us honest feedback — and, only if you're happy and only with your written approval, let us publish an anonymized summary of the engagement. Founding clients get direct founder attention and priority turnaround.</p>
+      <a href="brief.html" class="btn-primary">Apply as a founding client →</a>
     </div>
   </div>
 </div>
