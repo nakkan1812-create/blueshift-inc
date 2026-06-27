@@ -225,9 +225,16 @@
 - **メール**: → **ceo@blueshift-japan.com**
 - **ホーム**: 旧 `sample.html` を廃止し、ランディングを**ルート `index.html`** に（URLから "sample" を排除）
 - **リポジトリ名**: `blueshift-inc` → **`blueshift-japan`**
+- **AIプロセス図解**: index に「How we're fast」節（**70% machine / 30% human**・結論は必ず人間が執筆）
+- **Founding Clients / Why trust us**: index に正直なSocial Proof節＋創業期クライアント募集。**サイト表記はソフト（=A方針）＝人数・割引率は非公開**で運用
+- **改訂ポリシー**: 「**1回の改訂込み**」に明文化（無制限回避）
+- **現職Sumitomo表記**: who.html・index ABOUT のバイラインから現職肩書きを削除（経歴としての20年は維持）
+- **メール**: Gmailの「他のアドレスから送信」で `ceo@blueshift-japan.com` を確認済み（送受信OK・SMTP不要でsmtp.gmail.com経由）
 
-**残ToDo（本人/次回）**: LinkedIn会社ページ名・職歴の更新／GitHub Pages「Enforce HTTPS」ON／登記手続き（5-3）／
-HP残改善（実績・Founding Client・AIプロセス図解・業界フォーカス・プラン内訳表）／who・index の「現職Sumitomo」表記の扱い。
+**残ToDo（本人/次回）**: GitHub Pages「Enforce HTTPS」ON／登記手続き（5-3）／業界フォーカスの確定（§7・黒と相談）／プラン内訳の階段強化（提案済み・実装可）／LinkedInは社名・会社ページ・URL更新済み（残：個人プロフィールAboutに守秘の一文）。
+
+### ★黒への申し送り（要対応）
+- **「LinkedInからのメールをGmailで監視する定期タスク（cron / loop）」を停止・削除すること。** これは別のCoworkセッション（黒）で設定されたため、本セッションからは削除できない（このセッションの CronList は空＝該当ジョブは存在しない）。**中尾の意向＝不要なので削除**。設定した黒のセッションを開いて停止してください。（Gmailフィルタとして設定している場合は Gmail設定→「フィルタとブロック中のアドレス」から削除）
 
 ---
 
