@@ -219,5 +219,13 @@ footer a:hover{color:var(--teal)}
 <footer>
   &copy; 2026 Blueshift Japan LLC &nbsp;&middot;&nbsp; <a href="/">Services</a> &nbsp;&middot;&nbsp; <a href="why.html">Why Us</a> &nbsp;&middot;&nbsp; <a href="tokushoho.html">特定商取引法に基づく表記</a> &nbsp;&middot;&nbsp; <a href="privacy.html">Privacy</a> &nbsp;&middot;&nbsp; <a href="mailto:ceo@blueshift-japan.com">ceo@blueshift-japan.com</a>
 </footer>
+<script>
+(function(){
+  var p = new URLSearchParams(location.search).get('plan');
+  if(!p) return;
+  var el = document.getElementById('plan-' + p.toLowerCase());
+  if(el){ el.checked = true; }
+})();
+</script>
 </body>
 </html>
